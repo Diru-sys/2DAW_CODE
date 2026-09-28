@@ -1,1 +1,28 @@
 /*Fichero placeholder para CSS */
+header {
+    color: red;
+}
+
+nav {
+    color: orange;
+}
+
+footer {
+    color: indigo;
+}
+
+p {
+    color: aqua;
+}
+
+#a1 {
+    color: darkgreen;
+}
+
+#a2 {
+    color: green;
+}
+
+#a3 {
+    color: lightgreen;
+}
