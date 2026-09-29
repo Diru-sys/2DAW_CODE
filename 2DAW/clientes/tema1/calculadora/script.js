@@ -12,7 +12,7 @@ function muestraDigito(num) {
 function sumar() {
     num1 = frmCalculadora.pantalla.value;
     frmCalculadora.pantalla.value = "0";
-    repetir = false; // empieza una suma nueva
+    repetir = false;
 }
 
 function igual() {

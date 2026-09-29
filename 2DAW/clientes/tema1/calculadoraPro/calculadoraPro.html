@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Profesional</title>
+    <link rel="stylesheet" href="./calculadoraPro.css" />
+  </head>
+
+  <body>
+    <h1>Calculadora Profesional</h1>
+
+    <hr>
+
+    <form name="formularioCalculadora">
+      <input type="text" name="pantallaAuxiliar"value="0" style="text-align: right; font-size: 50%" readonly/>
+      <br>
+      <input type="text" name="pantallaCalculadora" value="0" style="text-align: right"/>
+    </form>
+
+    <br>
+
+    <button onclick="mostrarDigito(1)">1</button>
+    <button onclick="mostrarDigito(2)">2</button>
+    <button onclick="mostrarDigito(3)">3</button>
+
+    <br>
+
+    <button onclick="mostrarDigito(4)">4</button>
+    <button onclick="mostrarDigito(5)">5</button>
+    <button onclick="mostrarDigito(6)">6</button>
+    
+    <br>
+
+    <button onclick="mostrarDigito(7)">7</button>
+    <button onclick="mostrarDigito(8)">8</button>
+    <button onclick="mostrarDigito(9)">9</button>
+
+    <br>
+
+    <button onclick="">+</button>
+    <button onclick="mostrarDigito(0)">0</button>
+    <button onclick="">=</button>
+    
+    <br>
+
+    <button onclick="">-</button>
+    <button onclick="">X</button><button onclick="">/</button>
+    <script src="./calculadoraPro.js"></script>
+  </body>
+</html>
