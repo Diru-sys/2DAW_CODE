@@ -11,12 +11,27 @@ def mostrar_menu():
     print("7. Calcular media general")
     print("8. Mostrar mejor alumno")
     print("9. Modificar nombre de un alumno")
+    print("10. Calcular media curso")
     print("0. Salir")
 
 
 def calcular_media(alumno):
     """Devuelve la media de las notas de un alumno (debe tener al menos una nota)."""
     return sum(alumno["notas"]) / len(alumno["notas"])
+
+
+def calcular_media_de_los_cursos(alumnado):
+    cursos = []
+    for alumno in alumnado:
+        if alumno["curso"] not in cursos:
+            cursos.append(alumno["curso"])
+    
+    for curso in cursos:
+        medias = []
+        for alumno in alumnado:
+            if alumno["curso"] == curso:
+                medias.append(calcular_media(alumno))
+        print(f"Curso - {curso} - Media: {sum(medias) / len(medias)}")
 
 
 def mostrar_mejor_alumno(alumnado):
@@ -62,7 +77,7 @@ def modificar_nombre_alumno(alumnado):
 def pedir_opcion():
     """Pide una opción al usuario. Devuelve None si no es un número válido."""
     texto = input("Selecciona una opción: ").strip()
-    if texto.isdecimal():
+    if texto.isdigit():
         return int(texto)
     print("Por favor, introduce un número válido.")
     return None
@@ -72,7 +87,7 @@ def es_numero(texto):
     """Comprueba si un texto representa un número (entero o decimal con punto)."""
     if texto.startswith("-"):
         texto = texto[1:]
-    return texto.replace(".", "", 1).isdecimal()
+    return texto.replace(".", "", 1).isdigit()
 
 
 def buscar_alumno(alumnado, nombre):
@@ -88,8 +103,9 @@ def anadir_alumno(alumnado):
     if buscar_alumno(alumnado, nombre):
         print("El alumno ya existe en el sistema.")
     else:
-        alumnado.append({"nombre": nombre, "notas": []})
-        print(f"Alumno '{nombre}' añadido correctamente.")
+        curso = input(f"Introduce el curso de {nombre}: ").strip()
+        alumnado.append({"nombre": nombre, "notas": [], "curso": curso})
+        print(f"Nombre '{nombre}' y curso '{curso}' añadido correctamente.")
 
 
 def eliminar_alumno(alumnado):
@@ -108,6 +124,7 @@ def buscar_y_mostrar_alumno(alumnado):
     if alumno:
         print(f"\nAlumno encontrado: {alumno['nombre']}")
         print(f"Notas: {alumno['notas']}")
+        print(f"Curso: {alumno['curso']}")
     else:
         print("El alumno que buscas no existe.")
 
@@ -140,7 +157,7 @@ def mostrar_alumnado(alumnado):
     print("\n--- LISTA DE ALUMNOS ---")
     for alumno in alumnado:
         notas_str = ", ".join(map(str, alumno["notas"])) if alumno["notas"] else "Sin notas"
-        print(f"- {alumno['nombre']}: [{notas_str}]")
+        print(f"- {alumno['nombre']}: [{notas_str}] - {alumno['curso']}")
 
 
 def calcular_media_alumno(alumnado):
@@ -169,8 +186,24 @@ def main():
     alumnado = [
         {
             "nombre": "Ana",
-            "notas": [7.0, 8.0]
-        }
+            "notas": [7.0, 8.0],
+            "curso": "1º DAW"
+        },
+        {
+            "nombre": "Pepe",
+            "notas": [5.0, 10.0],
+            "curso": "2º DAW"
+        },
+        {
+            "nombre": "Carlos",
+            "notas": [2.0, 6.0],
+            "curso": "2º DAW"
+        },
+        {
+            "nombre": "Javier",
+            "notas": [7.0, 7.0],
+            "curso": "1º DAW"
+        },
     ]
 
     while True:
@@ -198,6 +231,8 @@ def main():
                 mostrar_mejor_alumno(alumnado)
             case 9:
                 modificar_nombre_alumno(alumnado)
+            case 10:
+                calcular_media_de_los_cursos(alumnado)
             case 0:
                 print("¡Hasta luego!")
                 break
