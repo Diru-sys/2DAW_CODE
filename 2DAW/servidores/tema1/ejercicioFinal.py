@@ -9,7 +9,54 @@ def mostrar_menu():
     print("5. Mostrar alumnado")
     print("6. Calcular media de un alumno")
     print("7. Calcular media general")
+    print("8. Mostrar mejor alumno")
+    print("9. Modificar nombre de un alumno")
     print("0. Salir")
+
+
+def calcular_media(alumno):
+    """Devuelve la media de las notas de un alumno (debe tener al menos una nota)."""
+    return sum(alumno["notas"]) / len(alumno["notas"])
+
+
+def mostrar_mejor_alumno(alumnado):
+    """Muestra el alumno con la media más alta entre los que tienen notas."""
+    mejor = None
+    mejor_media = -1
+
+    for alumno in alumnado:
+        if alumno["notas"]:
+            media = calcular_media(alumno)
+            if media > mejor_media:
+                mejor = alumno
+                mejor_media = media
+
+    if mejor is None:
+        print("No hay alumnos con notas registradas.")
+    else:
+        print(f"El mejor alumno es {mejor['nombre']} con una media de {mejor_media:.2f}.")
+
+
+def modificar_nombre_alumno(alumnado):
+    """Cambia el nombre de un alumno existente."""
+    nombre = input("Introduce el nombre del alumno que quieras modificar: ").strip()
+    alumno = buscar_alumno(alumnado, nombre)
+    if not alumno:
+        print("El alumno no existe.")
+        return
+
+    nuevo_nombre = input("Introduce el nuevo nombre: ").strip()
+    if not nuevo_nombre:
+        print("El nombre no puede estar vacío.")
+        return
+
+    existente = buscar_alumno(alumnado, nuevo_nombre)
+    if existente and existente is not alumno:
+        print("Ya existe un alumno con ese nombre.")
+        return
+
+    alumno["nombre"] = nuevo_nombre
+    print(f"Nombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
 
 
 def pedir_opcion():
@@ -147,6 +194,10 @@ def main():
                 calcular_media_alumno(alumnado)
             case 7:
                 calcular_media_general(alumnado)
+            case 8:
+                mostrar_mejor_alumno(alumnado)
+            case 9:
+                modificar_nombre_alumno(alumnado)
             case 0:
                 print("¡Hasta luego!")
                 break
