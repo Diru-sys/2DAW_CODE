@@ -12,7 +12,19 @@ def mostrar_menu():
     print("8. Mostrar mejor alumno")
     print("9. Modificar nombre de un alumno")
     print("10. Calcular media curso")
+    print("11. Ordenar alumnado")
     print("0. Salir")
+
+
+def ordenar_alumnado(alumnado):
+    opc = input("Quieres ordenar el alumnado por nombre o por nota? (1 para nombre y 2 para nota)?").strip()
+
+    if opc == "1":
+        alumnado.sort(key=lambda alumno: alumno["nombre"].lower())
+        print("Ordenado por nombre correctamente.")
+    elif opc == "2":
+        alumnado.sort(key=lambda alumno: calcular_media(alumno), reverse=True)
+        print("Ordenado por nota correctamente.")
 
 
 def calcular_media(alumno):
@@ -36,20 +48,9 @@ def calcular_media_de_los_cursos(alumnado):
 
 def mostrar_mejor_alumno(alumnado):
     """Muestra el alumno con la media más alta entre los que tienen notas."""
-    mejor = None
-    mejor_media = -1
+    alumno = max(alumnado, key=lambda alumno: calcular_media(alumno))
 
-    for alumno in alumnado:
-        if alumno["notas"]:
-            media = calcular_media(alumno)
-            if media > mejor_media:
-                mejor = alumno
-                mejor_media = media
-
-    if mejor is None:
-        print("No hay alumnos con notas registradas.")
-    else:
-        print(f"El mejor alumno es {mejor['nombre']} con una media de {mejor_media:.2f}.")
+    print(f"El alumno con la media más alta de todos es: {alumno["nombre"]} y su nota media es: {calcular_media(alumno)}")
 
 
 def modificar_nombre_alumno(alumnado):
@@ -233,6 +234,8 @@ def main():
                 modificar_nombre_alumno(alumnado)
             case 10:
                 calcular_media_de_los_cursos(alumnado)
+            case 11:
+                ordenar_alumnado(alumnado)
             case 0:
                 print("¡Hasta luego!")
                 break
