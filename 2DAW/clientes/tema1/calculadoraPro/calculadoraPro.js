@@ -85,12 +85,3 @@ function mostrarError() {
     signo = "";
     reiniciar = true;
 }
-
-function borrarTodo() {
-    num1 = null;
-    num2 = null;
-    signo = "";
-    reiniciar = false;
-    formularioCalculadora.pantallaCalculadora.value = "0";
-    formularioCalculadora.pantallaAuxiliar.value = "0";
-}
