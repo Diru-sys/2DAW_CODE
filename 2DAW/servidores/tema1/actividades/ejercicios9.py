@@ -30,10 +30,10 @@ productos = {
     "naranja": 1.2,
     "sandia": 3.0
 }
-
-productos_ordenados = sorted(productos, key=lambda x: productos[x], reverse=True)
-for producto in productos_ordenados:
-    print(f"Producto: {producto}, Precio: {productos[producto]}")
+def produccion(productos):
+    productos_ordenados = sorted(productos, key=lambda x: productos[x], reverse=True)
+    for producto in productos_ordenados:
+        print(f"Producto: {producto}, Precio: {productos[producto]}")
 
 
 #ACTIIVIDAD 4
@@ -45,7 +45,22 @@ def decorador(funcion):
         return resultado
     return wrapper
 
+@decorador
+def suma(a, b):
+    print(a*b)
+#suma(5,2)
+
 
 #ACTIVIDAD 5
+def decoradorContador(funcion):
+    contador = [0]
+    def wrapper(*args, **kwargs):
+        contador[0] += 1
+        print(f"Número de veces que se ha ejecutado esta función: {contador[0]}")
+        return funcion(*args, **kwargs)
+    return wrapper
 
-
+@decoradorContador
+def funcionPrueba(a, b):
+    return a + b
+#print(funcionPrueba(2, 7))
