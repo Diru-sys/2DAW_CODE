@@ -38,14 +38,19 @@
 
     <br>
 
-    <button onclick="">+</button>
+    <button onclick="mostrarSigno('+')">+</button>
     <button onclick="mostrarDigito(0)">0</button>
-    <button onclick="">=</button>
+    <button onclick="calcular()">=</button>
     
     <br>
 
-    <button onclick="">-</button>
-    <button onclick="">X</button><button onclick="">/</button>
+    <button onclick="mostrarSigno('-')">-</button>
+    <button onclick="mostrarSigno('x')">X</button>
+    <button onclick="mostrarSigno('/')">/</button>
+
+    <br>
+
+    <button onclick="borrarTodo()">C</button>
     <script src="./calculadoraPro.js"></script>
   </body>
 </html>
