@@ -4,7 +4,7 @@ let signo = "";
 let reiniciar = false;
 
 function mostrarDigito(num) {
-    if (reiniciar) {
+    if (reiniciar === true) {
         if (signo === "") formularioCalculadora.pantallaAuxiliar.value = "0";
         formularioCalculadora.pantallaCalculadora.value = num;
         reiniciar = false;
