@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS_t1 - Carlos Sánchez Damas</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-    <img src="./media/logo.png" alt="Logo">
-    <a href="#"><i class="Inicio">Inicio</i></a>
-    <a href="#"><i class="Entradas">Entradas</i></a>
-    <a href="#"><i class="Contacto">Contacto</i></a>
+        <h1 class="logo">Duro Festival XXL</h1>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#"><i class="fas fa-ticket-alt"></i> Entradas</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+        </nav>
     </header>
-    <hr>
+
     <main>
-        <section name="bloque1">
-        <img src="./media/600x300.svg" alt="imagenPlaceholder">
-        <p>
-            <strong>Duro Festival XXL</strong> vuelve los días 10 y 11 de octubre de 2026 al espacio Can Guitet de <strong>Montmeló</strong> (Barcelona)
-            con su edición más grande hasta la fecha. Más de 60 artistas repartidos en 3 escenarios y dos días de techno
-            al aire libre con nombres como <strong>Ben Klock</strong>, <strong>Kobosil</strong> y <strong>Andres Campo</strong> en el cartel. Si buscas 
-            un festival que no se anda con rodeos, Duro Festival XXL hace honor a su nombre.
-        </p>
+        <section class="principal">
+        <img src="https://placehold.co/600x300" alt="Imagen destacada del festival">
+        <div class="presentacion">
+            <p>
+                <strong>Duro Festival XXL</strong> vuelve los días 10 y 11 de octubre de 2026 al espacio Can Guitet de <strong>Montmeló</strong> (Barcelona)
+                con su edición más grande hasta la fecha. Más de 60 artistas repartidos en 3 escenarios y dos días de techno
+                al aire libre con nombres como <strong>Ben Klock</strong>, <strong>Kobosil</strong> y <strong>Andres Campo</strong> en el cartel. Si buscas 
+                un festival que no se anda con rodeos, Duro Festival XXL hace honor a su nombre.
+            </p>
+        </div>
         </section>
-        <section name="bloque2">
-            <div class = "izq">
-                <h1>Información del festival</h1>
-                <h2>Fecha</h2>
-                <h2>Lugar</h2>
+
+        <section class="secundaria">
+            <div class="izq">
+                <h2>Información del festival</h2>
+                <p><i class="fa-solid fa-calendar"></i> 10 y 11 de octubre de 2026</p>
+                <p><i class="fa-solid fa-location-dot"></i> Can Guitet, Montmeló</p>
             </div>
-            <div class = "der">
-                <button>COMPRAR ENTRADAS</button>
+
+            <div class ="der">
+                <button type="button">COMPRAR ENTRADAS</button>
             </div>
         </section>
-        <section name="bloque3">
+
+        <section class="extra">
             <p>
                 Compra tu entrada para el festival y disfruta de la mejor música techno y hard en un entorno único.
                 No te pierdas la oportunidad de vivir una experiencia inolvidable en Duro Festival XXL. ¡Te esperamos!
             </p>
         </section>
     </main>
-    <hr>
+
     <footer>
-        <a href="#"><i class="Facebook">Facebook</i></a>
-        <a href="#"><i class="Twitter">Twitter</i></a>
-        <a href="#"><i class="Instagram">Instagram</i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </footer>
 </body>
 </html>
