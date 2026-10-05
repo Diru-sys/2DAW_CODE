@@ -64,7 +64,7 @@ nav a:hover {
 .principal img {
     display: block;
     width: 100%;
-    max-width: 820px;
+    max-width: 760px;
     height: auto;
     margin: 0 auto;
     border: 2px solid var(--acento);
@@ -159,6 +159,12 @@ footer a {
 
 footer a:hover {
     color: var(--acento);
+}
+
+footer p {
+    margin: 0.75rem 0 0;
+    font-size: 0.8rem;
+    text-align: right;
 }
 
 @media (width <= 600px) {
