@@ -1,29 +1,23 @@
 function comprobar() {
-    const nombre = document.getElementById("txtNombre").value;
-    const apellido1 = document.getElementById("txtApellido1").value;
-    const apellido2 = document.getElementById("txtApellido2").value;
+    //Asignación constantes básicas
+    const nombre = document.getElementById("txtNombre").value.trim();
+    const apellido1 = document.getElementById("txtApellido1").value.trim();
+    const apellido2 = document.getElementById("txtApellido2").value.trim();
 
-    const texto = nombre.trim() + apellido1.trim() + apellido2.trim()
+    //Nombre completo
+    const texto = nombre + apellido1 + apellido2
 
-    //Longitud
-    let txtLongitud = texto.length;
-    document.getElementById("salida").innerText = `Longitud de nombre + apellidos (sin espacios): ${txtLongitud}`;
+    //Asignación de nombre de usuario
+    const usuario = (nombre.charAt(0) + apellido1.slice(0,3) + apellido2.slice(0,3)).toLowerCase();
 
-    //Minusculas
-    let txtMin = texto.toLowerCase();
-    document.getElementById("salida").innerText += `\nCadena completa en minúsculas: ${txtMin}`;
-
-    //Mayusculas
-    let txtMay = texto.toUpperCase();
-    document.getElementById("salida").innerText += `\nCadena completa en mayúsculas: ${txtMay}`;
-
-    //División
-    document.getElementById("salida").innerText += `\nDivisón del nombre completo:\n${nombre}\n${apellido1}\n${apellido2}`
-
-    //NombreUsuario
-    let txtUsuario = nombre.charAt(0).toLowerCase() + 
-                    apellido1.slice(0, 3).toLowerCase() + 
-                    apellido2.slice(0, 3).toLowerCase();
-
-document.getElementById("salida").innerText += `\nNombre de usuario: ${txtUsuario}`;
+    //Salida
+    document.getElementById("salida").innerText = 
+        `Tamaño del nombre completo sin espacios: ${texto.length}
+        Cadena completa en minúsculas: ${texto.toLowerCase()}
+        Cadena completa en mayúsculas: ${texto.toUpperCase()}
+        División del nombre en 3 líneas distintas:
+        ${nombre}
+        ${apellido1}
+        ${apellido2}
+        Nombre de usuario propuesto: ${usuario}`;
 }
