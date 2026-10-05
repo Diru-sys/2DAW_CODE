@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín 2</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center; /* Centra vertical y horizontalmente todo */
+            min-height: 100vh;   /* Ocupa el 100% del alto de la pantalla */
+            margin: 0;
+            text-align: center;  /* Centra el texto dentro de los botones y etiquetas */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Boletín 2</h1>
+        <form name="frmDatos">
+            <label>Introduce tu nombre:</label>
+            <br>
+            <input type="text" name="txtNombre" id="txtNombre">
+
+            <br>
+            <br>
+
+            <label>Introduce tu primer apellido:</label>
+            <br>
+            <input type="text" name="txtApellido1" id="txtApellido1">
+
+            <br>
+            <br>
+
+            <label>Introduce tu segundo apellido:</label>
+            <br>
+            <input type="text" name="txtApellido2" id="txtApellido2">
+
+        </form>
+
+        <br>
+
+        <button onclick="comprobar()">Comprobar</button>
+        <hr>
+        <section>
+            <label>Salida completa: </label>
+            <div id="salida">
+
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
