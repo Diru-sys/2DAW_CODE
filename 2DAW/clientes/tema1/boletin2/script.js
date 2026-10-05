@@ -1,9 +1,9 @@
 function comprobar() {
-    const txtNombre = document.getElementById("txtNombre").value;
-    const txtApellido1 = document.getElementById("txtApellido1").value;
-    const txtApellido2 = document.getElementById("txtApellido2").value;
+    const nombre = document.getElementById("txtNombre").value;
+    const apellido1 = document.getElementById("txtApellido1").value;
+    const apellido2 = document.getElementById("txtApellido2").value;
 
-    const texto = txtNombre.trim() + txtApellido1.trim() + txtApellido2.trim()
+    const texto = nombre.trim() + apellido1.trim() + apellido2.trim()
 
     //Longitud
     let txtLongitud = texto.length;
@@ -18,12 +18,12 @@ function comprobar() {
     document.getElementById("salida").innerText += `\nCadena completa en mayúsculas: ${txtMay}`;
 
     //División
-    document.getElementById("salida").innerText += `\nDivisón del nombre completo:\n${txtNombre}\n${txtApellido1}\n${txtApellido2}`
+    document.getElementById("salida").innerText += `\nDivisón del nombre completo:\n${nombre}\n${apellido1}\n${apellido2}`
 
     //NombreUsuario
-    let txtUsuario = txtNombre.charAt(0).toLowerCase() + 
-                    txtApellido1.slice(0, 3).toLowerCase() + 
-                    txtApellido2.slice(0, 3).toLowerCase();
+    let txtUsuario = nombre.charAt(0).toLowerCase() + 
+                    apellido1.slice(0, 3).toLowerCase() + 
+                    apellido2.slice(0, 3).toLowerCase();
 
 document.getElementById("salida").innerText += `\nNombre de usuario: ${txtUsuario}`;
 }
