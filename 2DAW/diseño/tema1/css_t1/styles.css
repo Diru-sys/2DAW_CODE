@@ -74,7 +74,7 @@ nav a:hover {
     margin-top: 1rem;
     line-height: 1.5;
 }
- 
+
 .presentacion p {
     margin: 0;
 }
@@ -198,7 +198,7 @@ footer p {
         border-top: 2px solid var(--acento);
     }
 }
-/*
+
 @media (prefers-color-scheme: dark) {
     :root {
         --panel: #151515;
@@ -210,5 +210,3 @@ footer p {
         font-family: "Courier New", Courier, monospace;
     }
 }
-
-*/
