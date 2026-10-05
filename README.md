@@ -21,4 +21,4 @@ cd 2DAW_CODE/2DAW
 
 ## 👤 Autor
  
-**Carlos** · [GitHub](https://github.com/Diru-sys) · [LinkedIn](https://www.linkedin.com/in/carlos-s%C3%A1nchez-damas-47b29a38b/)
+**Carlos Sánchez Damas** · [GitHub](https://github.com/Diru-sys) · [LinkedIn](https://www.linkedin.com/in/carlos-s%C3%A1nchez-damas-47b29a38b/)
