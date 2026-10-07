@@ -40,8 +40,8 @@ def añadirTarea(tareas):
 def buscarTarea(tareas, titulo):
     """Busca una tarea en mi lista de diccionarios de tareas"""
     for tarea in tareas:
-                if tarea["titulo"].lower() == titulo.lower():
-                    return tarea
+        if tarea["titulo"].lower() == titulo.lower():
+            return tarea
     return None
 
 
@@ -125,29 +125,29 @@ def marcarTarea(tareas):
 
 
 def contiene(tareas):
-    contenedores = []
     texto = str(input(f"Texto que quieres buscar en los titulos de las tareas: "))
-    for tarea in tareas:
-        if texto in tarea["titulo"]:
-            contenedores.append(tarea)
+    contenedores = [tarea for tarea in tareas if texto in tarea["titulo"]]
     print(f"Tareas que contienen este texto guardadas correctamente dentro de contenedores.")
-    print(contenedores)
 
 
 def main():
     while True:
-        opc = int(input("Introduce que quieres hacer: \n" \
-        "1.- Listar todas las tareas\n" \
-        "2.- Añadir una tarea\n" \
-        "3.- Buscar una tarea\n" \
-        "4.- Borrar una tarea\n" \
-        "5.- Editar una tarea\n" \
-        "6.- Marcar tarea realizada\n" \
-        "7.- Este titulo contiene este texto..\n" \
-        "0.- Salir\n"))
+        opc = int(input(
+        "\n====================\n"
+        "  GESTOR DE TAREAS  \n"
+        "====================\n"
+        "1. Listar todas las tareas\n"
+        "2. Añadir una tarea\n"
+        "3. Buscar una tarea\n"
+        "4. Borrar una tarea\n"
+        "5. Editar una tarea\n"
+        "6. Marcar tarea como realizada\n"
+        "7. Filtrar tareas por coincidencia de texto\n"
+        "0. Salir\n"
+        ))
         match (opc):
             case 0:
-                print("Programa finalizado.")
+                print("\nPrograma finalizado.")
                 break
 
             case 1:
