@@ -6,17 +6,19 @@
 -> Cada tarea es un diccionario que tiene una de estas variables.
 -> Se debe tener varias funciones: LIstar, Añadir, Buscar, Borrar, Editar
 """
-#----------------------------------------------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------------------
 tareas = []
 
 
 def listarTareas(tareas):
     """Lista todas las tareas existentes"""
     if not tareas:
-        print("No existen tareas registradas.")
+        print("\nNo existen tareas registradas.")
     else:
-        print("Listado de tareas")
-        print(tareas)
+        print("\nListado de tareas")
+        for tarea in tareas:
+                print(f"Titulo: {tarea["titulo"]} - Tiempo: {tarea["tiempo"]} horas - Realizada: {tarea["realizada"]}")
+        
 
 
 def añadirTarea(tareas):
@@ -34,7 +36,7 @@ def añadirTarea(tareas):
         "realizada": realizada
     }
     tareas.append(tareaEscrita)
-    print("Tarea añadida correctamente.")
+    print("\nTarea añadida correctamente.")
 
 
 def buscarTarea(tareas, titulo):
@@ -51,7 +53,7 @@ def buscarMostrarTarea(tareas):
     tarea = buscarTarea(tareas, titulo)
 
     if tarea is None:
-        print(f"Tarea no encontrada.")
+        print(f"\nTarea no encontrada.")
     else:
         print(
             f"Tarea encontrada.\n"
@@ -67,10 +69,10 @@ def borrarTarea(tareas):
     tarea = buscarTarea(tareas, titulo)
 
     if tarea is None:
-        print(f"Tarea no encontrado o no es posible de borrar.")
+        print(f"\nTarea no encontrado o no es posible de borrar.")
     else:
         tareas.remove(tarea)
-        print(f"Tarea borrada correctamente.")
+        print(f"\nTarea borrada correctamente.")
 
 
 def editarTarea(tareas):
@@ -79,7 +81,7 @@ def editarTarea(tareas):
     tarea = buscarTarea(tareas, titulo)
 
     if tarea is None:
-        print(f"Tarea no encontrada con este titulo.")
+        print(f"\nTarea no encontrada con este titulo.")
     else:
         while True:
             opc = int(input("¿Que quieres editar?\n" \
@@ -118,16 +120,18 @@ def marcarTarea(tareas):
     tarea = buscarTarea(tareas, titulo)
 
     if tarea is None:
-        print(f"Tarea no encontrada con este titulo.")
+        print(f"\nTarea no encontrada con este titulo.")
     else:
         tarea["realizada"] = True
-        print(f"Tarea marcada como completa correctamente.")
+        print(f"\nTarea marcada como completa correctamente.")
 
 
 def contiene(tareas):
     texto = str(input(f"Texto que quieres buscar en los titulos de las tareas: "))
     contenedores = [tarea for tarea in tareas if texto in tarea["titulo"]]
-    print(f"Tareas que contienen este texto guardadas correctamente dentro de contenedores.")
+    print(f"\nTareas que contienen este texto guardadas correctamente dentro de contenedores.")
+    for tarea in contenedores:
+        print(f"Titulo: {tarea["titulo"]} - Tiempo: {tarea["tiempo"]} horas- Realizada: {tarea["realizada"]}")
 
 
 def main():
