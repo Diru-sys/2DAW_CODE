@@ -1,0 +1,64 @@
+* {/*General*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {/*Colores*/
+    --header: #1a1d26;
+    --menu: #f04454;
+    --hero: #4a82c4;
+    --main: #1f2c3d;
+    --banner: #f2c94c;
+    --extra: #3cb38d;
+    --image: #bce0e2;
+    --blanco: #ffffff;
+    /*Para los textos en general*/
+    --claro: #ffffff;
+    --oscuro: #222222;
+}
+
+body {/*Body general*/
+    font-weight: bold;
+    color: var(--claro);
+}
+
+/*Colores para cada sección distintas*/
+.boxHeader {
+    background-color: var(--bg-header); 
+}
+
+.boxMenu {
+    background-color: var(--bg-menu);
+}
+
+.boxHero {
+    background-color: var(--bg-hero);
+}
+
+.boxMain {
+    background-color: var(--bg-main);
+}
+
+.boxBanner {
+    background-color: var(--bg-banner); color: var(--text-dark);
+}
+
+.boxExtra  {
+    background-color: var(--bg-extra);
+}
+
+.boxImage  {
+    background-color: var(--bg-image); color: var(--text-dark);
+}
+
+.boxBlanco {
+    background-color: var(--bg-blanco);
+}
+
+/*Centrado del texto dentro de las cajas*/
+.boxHeader, .boxMenu, .boxHero, .boxMain, .boxBanner, .boxExtra, .boxImage, .boxBlanco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
