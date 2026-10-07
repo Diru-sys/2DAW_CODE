@@ -1,10 +1,9 @@
 # ACTIVIDAD FINAL
-def guardarCodigo():
-    rutaDestino = "./../archivosTXT/ejercicioFinal.txt"
-    with open(__file__, "r", encoding="utf-8") as origen:
-        codigo = origen.read()
-    with open(rutaDestino, "w", encoding="utf-8") as destino:
-        destino.write(codigo)
+RUTA = "./datos.txt"
+def guardarLog(datosAGuardar):
+    with open(RUTA, "a", encoding="utf-8") as fichero:
+        fichero.write(datosAGuardar)
+
 
 def mostrar_menu():
     """Muestra el menú principal."""
@@ -29,9 +28,11 @@ def ordenar_alumnado(alumnado):
     if opc == "1":
         alumnado.sort(key=lambda alumno: alumno["nombre"].lower())
         print("Ordenado por nombre correctamente.")
+        guardarLog(f"\nOrdenador por nombre correctamente")
     elif opc == "2":
         alumnado.sort(key=lambda alumno: calcular_media(alumno), reverse=True)
         print("Ordenado por nota correctamente.")
+        guardarLog(f"\nOrdenado por nota correctamente")
 
 
 def calcular_media(alumno):
@@ -51,6 +52,7 @@ def calcular_media_de_los_cursos(alumnado):
             if alumno["curso"] == curso:
                 medias.append(calcular_media(alumno))
         print(f"Curso - {curso} - Media: {sum(medias) / len(medias)}")
+        guardarLog(f"\nCurso - {curso} - Media: {sum(medias) / len(medias)}")
 
 
 def mostrar_mejor_alumno(alumnado):
@@ -58,7 +60,7 @@ def mostrar_mejor_alumno(alumnado):
     alumno = max(alumnado, key=lambda alumno: calcular_media(alumno))
 
     print(f"El alumno con la media más alta de todos es: {alumno["nombre"]} y su nota media es: {calcular_media(alumno)}")
-
+    guardarLog(f"\nEl alumno con la media más alta de todos es: {alumno["nombre"]} y su nota media es: {calcular_media(alumno)}")
 
 def modificar_nombre_alumno(alumnado):
     """Cambia el nombre de un alumno existente."""
@@ -66,20 +68,24 @@ def modificar_nombre_alumno(alumnado):
     alumno = buscar_alumno(alumnado, nombre)
     if not alumno:
         print("El alumno no existe.")
+        guardarLog(f"\nEl alumno no existe.")
         return
 
     nuevo_nombre = input("Introduce el nuevo nombre: ").strip()
     if not nuevo_nombre:
         print("El nombre no puede estar vacío.")
+        guardarLog(f"\nEl nombre no puede estar vacío.")
         return
 
     existente = buscar_alumno(alumnado, nuevo_nombre)
     if existente and existente is not alumno:
         print("Ya existe un alumno con ese nombre.")
+        guardarLog(f"\nYa existe un alumno con ese nombre.")
         return
 
     alumno["nombre"] = nuevo_nombre
     print(f"Nombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
+    guardarLog(f"\nNombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
 
 
 def pedir_opcion():
@@ -88,6 +94,7 @@ def pedir_opcion():
     if texto.isdigit():
         return int(texto)
     print("Por favor, introduce un número válido.")
+    guardarLog(f"\nPor  favor, introduce un úmero valido.")
     return None
 
 
@@ -110,10 +117,12 @@ def anadir_alumno(alumnado):
     nombre = input("Introduce el nombre del alumno: ").strip()
     if buscar_alumno(alumnado, nombre):
         print("El alumno ya existe en el sistema.")
+        guardarLog(f"\nEl alumno ya existe en el sistema.")
     else:
         curso = input(f"Introduce el curso de {nombre}: ").strip()
         alumnado.append({"nombre": nombre, "notas": [], "curso": curso})
         print(f"Nombre '{nombre}' y curso '{curso}' añadido correctamente.")
+        guardarLog(f"\nNombre '{nombre}' y curso '{curso}' añadido correctamente.")
 
 
 def eliminar_alumno(alumnado):
@@ -122,8 +131,10 @@ def eliminar_alumno(alumnado):
     if alumno:
         alumnado.remove(alumno)
         print(f"Alumno '{nombre}' eliminado correctamente.")
+        guardarLog(f"\nAlumno'{nombre}' eliminado correctamente.")
     else:
         print("El alumno que buscas no existe.")
+        guardarLog(f"\nEl alumno que buscas no existe.")
 
 
 def buscar_y_mostrar_alumno(alumnado):
@@ -133,8 +144,12 @@ def buscar_y_mostrar_alumno(alumnado):
         print(f"\nAlumno encontrado: {alumno['nombre']}")
         print(f"Notas: {alumno['notas']}")
         print(f"Curso: {alumno['curso']}")
+        guardarLog(f"\nAlumno encontrado: {alumno['nombre']}")
+        guardarLog(f"\nNotas: {alumno['notas']}")
+        guardarLog(f"\nCurso: {alumno['curso']}")
     else:
         print("El alumno que buscas no existe.")
+        guardarLog(f"\nEl alumno que buscas no existe.")
 
 
 def anadir_nota(alumnado):
@@ -142,30 +157,37 @@ def anadir_nota(alumnado):
     alumno = buscar_alumno(alumnado, nombre)
     if not alumno:
         print("El alumno no existe.")
+        guardarLog(f"\nEl alumno no existe.")
         return
 
     texto = input("Introduce la nota (0 - 10): ").strip()
     if not es_numero(texto):
         print("Error: Debes introducir un número.")
+        guardarLog(f"\nError. Debes introducir un número.")
         return
 
     nota = float(texto)
     if 0 <= nota <= 10:
         alumno["notas"].append(nota)
         print(f"Nota {nota} añadida a {alumno['nombre']}.")
+        guardarLog(f"\nNota {nota} añadida a {alumno['nombre']}.")
     else:
         print("La nota debe estar entre 0 y 10.")
+        guardarLog(f"\nLa nota debe estar entre 0 y 10.")
 
 
 def mostrar_alumnado(alumnado):
     if not alumnado:
         print("No hay alumnos registrados.")
+        guardarLog(f"\nNo hay alumnos registrados")
         return
 
     print("\n--- LISTA DE ALUMNOS ---")
+    guardarLog(f"\n--- LISTA DE ALUMNOS ---")
     for alumno in alumnado:
         notas_str = ", ".join(map(str, alumno["notas"])) if alumno["notas"] else "Sin notas"
         print(f"- {alumno['nombre']}: [{notas_str}] - {alumno['curso']}")
+        guardarLog(f"\n- {alumno['nombre']}: [{notas_str}] - {alumno['curso']}")
 
 
 def calcular_media_alumno(alumnado):
@@ -173,11 +195,14 @@ def calcular_media_alumno(alumnado):
     alumno = buscar_alumno(alumnado, nombre)
     if not alumno:
         print("El alumno no existe.")
+        guardarLog(f"\nEl alumno no existe.")
     elif alumno["notas"]:
         media = sum(alumno["notas"]) / len(alumno["notas"])
         print(f"La media de {alumno['nombre']} es: {media:.2f}")
+        guardarLog(f"\nLa media de {alumno['nombre']} es: {media:.2f}")
     else:
         print(f"{alumno['nombre']} no tiene notas registradas.")
+        guardarLog(f"\n{alumno['nombre']} no tiene notas registradas.")
 
 
 def calcular_media_general(alumnado):
@@ -185,13 +210,15 @@ def calcular_media_general(alumnado):
     if todas_las_notas:
         media_general = sum(todas_las_notas) / len(todas_las_notas)
         print(f"La media general de todo el alumnado es: {media_general:.2f}")
+        guardarLog(f"\nLa media general de todo el alumnado es: {media_general:.2f}")
     else:
         print("No hay notas registradas en ningún alumno para calcular la media general.")
+        guardarLog(f"\nNo hay notas registradas en ningún alumno para calcular la media general.")
 
 
 def main():
-    guardarCodigo()
     print(" ==== GESTIÓN DEL ALUMNADO === ")
+    guardarLog(f"\n ==== GESTIÓN DEL ALUMNADO === ")
     alumnado = [
         {
             "nombre": "Ana",
@@ -246,9 +273,11 @@ def main():
                 ordenar_alumnado(alumnado)
             case 0:
                 print("¡Hasta luego!")
+                guardarLog(f"\nFinalización del programa.")
                 break
             case _:
                 print("Error en la selección de opciones, intenta de nuevo.")
+                guardarLog(f"\nError en la selección de opciones, intenta de nuevo.")
 
 
 if __name__ == "__main__":

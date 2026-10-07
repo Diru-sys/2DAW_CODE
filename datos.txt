@@ -1,0 +1,21 @@
+
+ ==== GESTIÓN DEL ALUMNADO === 
+El alumno ya existe en el sistema.
+Nota 8.0 añadida a Carlos.
+Nota 10.0 añadida a Carlos.
+Curso - 1º DAW - Media: 7.25
+Curso - 2º DAW - Media: 7.0
+El alumno con la media más alta de todos es: Ana y su nota media es: 7.5
+--- LISTA DE ALUMNOS ---
+- Ana: [7.0, 8.0] - 1º DAW
+- Pepe: [5.0, 10.0] - 2º DAW
+- Carlos: [2.0, 6.0, 8.0, 10.0] - 2º DAW
+- Javier: [7.0, 7.0] - 1º DAW
+Finalización del programa.
+ ==== GESTIÓN DEL ALUMNADO === 
+--- LISTA DE ALUMNOS ---
+- Ana: [7.0, 8.0] - 1º DAW
+- Pepe: [5.0, 10.0] - 2º DAW
+- Carlos: [2.0, 6.0] - 2º DAW
+- Javier: [7.0, 7.0] - 1º DAW
+Finalización del programa.
