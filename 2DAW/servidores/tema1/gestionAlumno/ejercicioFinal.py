@@ -95,13 +95,6 @@ def modificar_nombre_alumno(alumnado):
     guardarLog(f"\nNombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
 
 
-def es_numero(texto):
-    """Comprueba si un texto representa un número (entero o decimal con punto)."""
-    if texto.startswith("-"):
-        texto = texto[1:]
-    return texto.replace(".", "", 1).isdigit()
-
-
 def buscar_alumno(alumnado, nombre):
     """Devuelve el alumno cuyo nombre coincide (sin distinguir mayúsculas) o None."""
     for alumno in alumnado:
@@ -157,13 +150,7 @@ def anadir_nota(alumnado):
         guardarLog(f"\nEl alumno no existe.")
         return
 
-    texto = input("Introduce la nota (0 - 10): ").strip()
-    if not es_numero(texto):
-        print("Error: Debes introducir un número.")
-        guardarLog(f"\nError. Debes introducir un número.")
-        return
-
-    nota = float(texto)
+    nota = pedirNumero(f"Introduce la nota (0 - 10): ")
     if 0 <= nota <= 10:
         alumno["notas"].append(nota)
         print(f"Nota {nota} añadida a {alumno['nombre']}.")
