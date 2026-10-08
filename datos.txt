@@ -19,3 +19,13 @@ Finalización del programa.
 - Carlos: [2.0, 6.0] - 2º DAW
 - Javier: [7.0, 7.0] - 1º DAW
 Finalización del programa.
+ ==== GESTIÓN DEL ALUMNADO === 
+ ==== GESTIÓN DEL ALUMNADO === 
+El alumno ya existe en el sistema.
+Ordenador por nombre correctamente
+--- LISTA DE ALUMNOS ---
+- Ana: [7.0, 8.0] - 1º DAW
+- Carlos: [2.0, 6.0] - 2º DAW
+- Javier: [7.0, 7.0] - 1º DAW
+- Pepe: [5.0, 10.0] - 2º DAW
+Finalización del programa.

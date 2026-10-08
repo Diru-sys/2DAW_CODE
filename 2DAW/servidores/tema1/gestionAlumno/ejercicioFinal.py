@@ -4,6 +4,13 @@ def guardarLog(datosAGuardar):
     with open(RUTA, "a", encoding="utf-8") as fichero:
         fichero.write(datosAGuardar)
 
+def pedirNumero(mensaje):
+    while True:
+        try:
+            return int(input(mensaje))
+        except ValueError:
+            print(f"Debes introducir un número entero.")
+
 
 def mostrar_menu():
     """Muestra el menú principal."""
@@ -23,13 +30,13 @@ def mostrar_menu():
 
 
 def ordenar_alumnado(alumnado):
-    opc = input("Quieres ordenar el alumnado por nombre o por nota? (1 para nombre y 2 para nota)?").strip()
+    opc = pedirNumero(f"Quieres ordenar el alumnado por nombre o por nota? (1 para nombre y 2 para nota)?")
 
-    if opc == "1":
+    if opc == 1:
         alumnado.sort(key=lambda alumno: alumno["nombre"].lower())
         print("Ordenado por nombre correctamente.")
         guardarLog(f"\nOrdenador por nombre correctamente")
-    elif opc == "2":
+    elif opc == 2:
         alumnado.sort(key=lambda alumno: calcular_media(alumno), reverse=True)
         print("Ordenado por nota correctamente.")
         guardarLog(f"\nOrdenado por nota correctamente")
@@ -86,16 +93,6 @@ def modificar_nombre_alumno(alumnado):
     alumno["nombre"] = nuevo_nombre
     print(f"Nombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
     guardarLog(f"\nNombre cambiado de '{nombre}' a '{nuevo_nombre}'.")
-
-
-def pedir_opcion():
-    """Pide una opción al usuario. Devuelve None si no es un número válido."""
-    texto = input("Selecciona una opción: ").strip()
-    if texto.isdigit():
-        return int(texto)
-    print("Por favor, introduce un número válido.")
-    guardarLog(f"\nPor  favor, introduce un úmero valido.")
-    return None
 
 
 def es_numero(texto):
@@ -244,7 +241,7 @@ def main():
 
     while True:
         mostrar_menu()
-        opc = pedir_opcion()
+        opc = pedirNumero("")
         if opc is None:
             continue
 
