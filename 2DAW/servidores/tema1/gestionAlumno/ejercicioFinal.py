@@ -164,7 +164,7 @@ def anadir_nota(alumnado):
         print(f"Nota {nota} añadida a {alumno['nombre']}.")
         guardarLog(f"\nNota {nota} añadida a {alumno['nombre']}.")
     else:
-        print("La nota debe estar entre 0 y 10.")
+        print("La nota debe estar entro 0 y 10.")
         guardarLog(f"\nLa nota debe estar entre 0 y 10.")
 
 
