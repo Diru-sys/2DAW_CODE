@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 RUTA = "./datos.txt"
 def guardarLog(datosAGuardar):
     with open(RUTA, "a", encoding="utf-8") as fichero:
