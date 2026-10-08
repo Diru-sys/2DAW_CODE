@@ -5,6 +5,7 @@ def guardarLog(datosAGuardar):
         fichero.write(datosAGuardar)
 
 def pedirNumero(mensaje):
+    """Este metodo valida si la información introducida es un número junto con un mensaje."""
     while True:
         try:
             return int(input(mensaje))
@@ -13,6 +14,7 @@ def pedirNumero(mensaje):
 
 
 def mostrar_menu():
+    """Este metodo muestra el menú principal."""
     """Muestra el menú principal."""
     print("\n--- MENÚ ---")
     print("1. Añadir alumno")
@@ -30,6 +32,7 @@ def mostrar_menu():
 
 
 def ordenar_alumnado(alumnado):
+    """Este metodo ordena el alumnado por nombre o nota."""
     opc = pedirNumero(f"Quieres ordenar el alumnado por nombre o por nota? (1 para nombre y 2 para nota)?")
 
     if opc == 1:
@@ -48,6 +51,7 @@ def calcular_media(alumno):
 
 
 def calcular_media_de_los_cursos(alumnado):
+    """Este metodo da la media ordenada por los cursos existentes."""
     cursos = []
     for alumno in alumnado:
         if alumno["curso"] not in cursos:
@@ -104,6 +108,7 @@ def buscar_alumno(alumnado, nombre):
 
 
 def anadir_alumno(alumnado):
+    """Este metodo añade un nuevo alumno al alumnado."""
     nombre = input("Introduce el nombre del alumno: ").strip()
     if buscar_alumno(alumnado, nombre):
         print("El alumno ya existe en el sistema.")
@@ -116,6 +121,7 @@ def anadir_alumno(alumnado):
 
 
 def eliminar_alumno(alumnado):
+    """Este metodo busca un alumno y si existe lo borra."""
     nombre = input("Introduce el nombre del alumno que quieras eliminar: ").strip()
     alumno = buscar_alumno(alumnado, nombre)
     if alumno:
@@ -128,6 +134,7 @@ def eliminar_alumno(alumnado):
 
 
 def buscar_y_mostrar_alumno(alumnado):
+    """Este metodo busca el nombre de un alumno por texto y te dice si existe o no, junto con sus notas y cursos."""
     nombre = input("Introduce el nombre del alumno que quieras buscar: ").strip()
     alumno = buscar_alumno(alumnado, nombre)
     if alumno:
@@ -143,6 +150,7 @@ def buscar_y_mostrar_alumno(alumnado):
 
 
 def anadir_nota(alumnado):
+    """Este metodo pide el nombre de un alumno para añadirle una nota a su lista de notas."""
     nombre = input("Introduce el nombre del alumno al que añadir la nota: ").strip()
     alumno = buscar_alumno(alumnado, nombre)
     if not alumno:
@@ -161,6 +169,7 @@ def anadir_nota(alumnado):
 
 
 def mostrar_alumnado(alumnado):
+    """Este metodo muestra todo el alumnado existente."""
     if not alumnado:
         print("No hay alumnos registrados.")
         guardarLog(f"\nNo hay alumnos registrados")
@@ -175,6 +184,7 @@ def mostrar_alumnado(alumnado):
 
 
 def calcular_media_alumno(alumnado):
+    """Este metodo pide el nombre de un alumno para calcular su media de notas."""
     nombre = input("Introduce el nombre del alumno para calcular su media: ").strip()
     alumno = buscar_alumno(alumnado, nombre)
     if not alumno:
@@ -190,6 +200,7 @@ def calcular_media_alumno(alumnado):
 
 
 def calcular_media_general(alumnado):
+    """Este metodo calcula la media general de todo el alumnado."""
     todas_las_notas = [nota for alumno in alumnado for nota in alumno["notas"]]
     if todas_las_notas:
         media_general = sum(todas_las_notas) / len(todas_las_notas)
