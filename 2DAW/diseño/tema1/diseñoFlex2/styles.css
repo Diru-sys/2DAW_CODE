@@ -1,39 +1,45 @@
-.contenedor {
+header h1{
+    text-align: center;
+}
 
+.contenedor {
+    display: flex;
 }
 
 .izquierda  {
-
+    display: flex;
 }
 
 .icono {
-
+    display: flex;
 }
 
 .imagen {
-
+    display: flex;
 }
 
 .derecha {
-
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .arriba {
-
+    flex: 1;
+    border-bottom: 1px solid black;
 }
 
 .abajo {
-
+    flex: 1;
 }
 
 .miniaturas {
-
+    display: flex;
+    gap: 10px;
+    height: 40px;
 }
 
 .mini {
-    
-}
-
-header h1{
-    text-align: center;
+    flex: 1;
+    border: 1px solid black;
 }
