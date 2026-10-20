@@ -1,5 +1,12 @@
 #APUNTES EXÁMEN JUEVES 29 DE OCTUBRE
 Intentar demostrar todo lo que sabes, que es
-    1.
-    2.
-    3.
+    1.Usar property
+    2.Usar raise ValueError
+    3.Usar Getters y Setters
+    4.
+    5.
+    6.
+    7.
+    8.
+    9.
+    10.
