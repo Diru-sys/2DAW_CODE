@@ -13,3 +13,5 @@ Intentar demostrar todo lo que sabes, que es
     11.Bucles, Condicionales
     12.Decoradores (mas o menos)
     13.*args y **kwargs
+    14.Modulos
+    15.Imports
