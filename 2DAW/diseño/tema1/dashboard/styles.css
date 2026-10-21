@@ -1,0 +1,27 @@
+.lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista li {
+    margin-bottom: 8px; 
+}
+
+.circulo {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.verde {
+    background-color: #4CAF50;
+}
+.azul {
+    background-color: #5DADE2;
+}
+.morado {
+    background-color: #AF7AC5;
+}
