@@ -15,3 +15,5 @@ Intentar demostrar todo lo que sabes, que es
     13.*args y **kwargs
     14.Modulos
     15.Imports
+    16.Try,except
+    17."""HELPS"""
