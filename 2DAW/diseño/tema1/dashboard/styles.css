@@ -1,9 +1,51 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+
+}
+
+.dashboard {
+
+}
+
+.sidebar {
+
+}
+
+.sidebar h1 {
     
+}
+
+.cabecera {
+
+}
+
+.cabecera h1 {
+    
+}
+
+.cabecera p {
+    
+}
+
+.tarjeta {
+
+}
+
+.tarjeta h2 {
+
+}
+
+.tarjeta p {
+
+}
+
+#notas {
+
 }
 
 .lista {
