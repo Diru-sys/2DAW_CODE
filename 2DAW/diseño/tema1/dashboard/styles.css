@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    
+}
+
 .lista {
     list-style-type: none;
     padding: 0;
@@ -19,9 +27,11 @@
 .verde {
     background-color: #4CAF50;
 }
+
 .azul {
     background-color: #5DADE2;
 }
+
 .morado {
     background-color: #AF7AC5;
 }
