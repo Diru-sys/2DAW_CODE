@@ -17,3 +17,4 @@ Intentar demostrar todo lo que sabes, que es
     15.Imports
     16.Try,except
     17."""HELPS"""
+    18. Herencia, polimorfismo y composición
