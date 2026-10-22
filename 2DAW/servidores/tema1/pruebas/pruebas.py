@@ -1,52 +1,62 @@
-#Creación de la clase alumno
-class Alumno:
-    def __init__(self, nombre, edad):
-        """Constructor de la clase Alumno."""
-        self.nombre = nombre
-        self.edad = edad
-        self.notas = []
+class Jugador:
+    def __init__(self, nombreJugador, raza, experiencia):
+        self.nombreJugador = nombreJugador
+        self.raza = raza
+        self.experiencia = experiencia
+
+    def atacar(self, jugador):
+        return f"El jugador {self.nombreJugador} está atacando al jugador {jugador} de forma básica."
 
     def __str__(self):
-        """Método para mostrar la instancia de esta clase."""
-        return f"Nombre del alumno: {self.nombre} | Edad: {self.edad} | Notas: {self.notas}"
+        return f"El jugador se llama: {self.nombreJugador}, es de una raza tipo: {self.raza} y tiene {self.experiencia} puntos de experiencia."
 
-    def añadirNota(self, nota):
-        """Método para añadir una nueva nota a la lista de notas del alumno."""
-        self.notas.append(nota)
 
-    def media(self):
-        """Calcular la media del alumno apartir de la lista de sus notas."""
-        return sum(self.notas) / len(self.notas)
+class Mago(Jugador):
+    def __init__(self, nombreJugador, arma, raza, experiencia):
+        super().__init__(nombreJugador, raza, experiencia)
+        self.arma = arma
 
-    def cambiarNombre(self,nombreNuevo):
-        """Método para cambiar el nombre del alumno."""
-        self.nombre = nombreNuevo
+    def atacar(self, jugador):
+        return f"El jugador {self.nombreJugador} está atacando al jugador {jugador} con su {self.arma}."
 
-    def mayorEdad(self):
-        """Comprobar que el alumno es mayor de 18 años de edad."""
-        if self.edad >= 18:
-            return f"Este alumno de nombre {self.nombre} es mayor de edad."
-        else:
-            return f"El alumno de nombre {self.nombre} es menor de edad."
-    
-    
-#Crear instancia de la clase Alumno
-alumno1 = Alumno("Carlos", 20)
+    def hechizoHielo(self):
+        return f"El mago ataca con su hechizo de hielo a todas las criaturas cercanas a 30 pies."
 
-#Añadir notas al objeto ana
-alumno1.añadirNota(8)
-alumno1.añadirNota(5)
-alumno1.añadirNota(6)
+    def __str__(self):
+        return f"El jugador se llama: {self.nombreJugador}, es de una raza tipo: {self.raza}, tiene esta arma: {self.arma} y {self.experiencia} puntos de experiencia."
 
-#Calcular media
-print(f"{alumno1.media():.2f}")
 
-#Mostrar si es mayor de edad
-print(alumno1.mayorEdad())
+class Barbaro(Jugador):
+    def __init__(self, nombreJugador, arma, raza, experiencia):
+        super().__init__(nombreJugador, raza, experiencia)
+        self.arma = arma
 
-#Cambiar el nombre del alumno
-print("Cambiamos el nombre del alumno de Carlos -> Ana Luna")
-alumno1.cambiarNombre("Ana Luna")
+    def atacar(self, jugador):
+        return f"El jugador {self.nombreJugador} está atacando al jugador {jugador} con su {self.arma}."
 
-#Objeto ana
-print(alumno1)
+    def rabia(self):
+        return f"El bárbaro entra en su modo de rabia y asusta a todas las criaturas a 15 pies cerca de el"
+
+    def __str__(self):
+        return f"El jugador se llama: {self.nombreJugador}, es de una raza tipo: {self.raza}, tiene esta arma: {self.arma} y {self.experiencia} puntos de experiencia."
+
+
+jugador1 = Jugador("Carlos", "Golem", 60)
+
+jugador2 = Mago("Álvaro", "Bastón de magia oscura", "Enano", 6767)
+
+jugador3 = Barbaro("Hugo", "Hacha", "Orco", 2000)
+
+print(f" ===JUGADORES=== ")
+print(jugador1)
+print(jugador2)
+print(jugador3)
+print()
+print(f" ===RONDA DE ATAQUE=== ")
+print(jugador1.atacar(jugador2.nombreJugador))
+print(jugador2.atacar(jugador3.nombreJugador))
+print(jugador1.atacar(jugador3.nombreJugador))
+print()
+print(f" ===RONDA ESPECIAL=== ")
+print(jugador2.hechizoHielo())
+print(jugador3.rabia())
