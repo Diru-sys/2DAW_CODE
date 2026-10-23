@@ -16,7 +16,48 @@ def traducir(diccionario):
 def añadirTraduccion(diccionario):
     palabra = input("Introduce una palabra nueva en español: ").lower()
 
+    if palabra in diccionario:
+        print(f"La palabra ya está en el diccionario.")
+    else:
+        traduccion = input("Introduce la traducción de esta palabra: ").lower()
+        diccionario[palabra] = traduccion
+        print(f"Traducción añadida correctamente.")
 
+def modificar(diccionario):
+    palabra = input("Introduce una palabra del diccionario: ").lower()
+
+    if palabra not in diccionario:
+        print(f"Esta palabra no está en el diccionario.")
+    else:
+        traduccion = input("Introduce la nueva traducción de la palabra: ").lower()
+        diccionario[palabra] = traduccion
+        print(f"Traducción modificada correctamente.")
+
+def eliminar(diccionario):
+    palabra = input("Introduce una palabra del diccionario: ").lower()
+    if palabra in diccionario:
+        del diccionario[palabra]
+        print(f"Palabra eliminada correctamente.")
+    else:
+        print(f"Esta palabra no está en el diccionario.")
+
+def ordenadas(diccionario):
+    palabrasOrdenadas = sorted(diccionario)
+
+    for palabra in palabrasOrdenadas:
+        traduccion = diccionario[palabra]
+        print(f"{palabra} : {traduccion}")
+
+def frase(diccionario):
+    frase = input("Introduce una frase: ").lower().strip()
+    fraseSeparada = frase.split()
+    fraseTraducida = []
+    for palabra in fraseSeparada:
+        if palabra in diccionario:
+            fraseTraducida.append(diccionario[palabra])
+        else:
+            fraseTraducida.append(palabra)
+    print(f"Frase traducida:{fraseTraducida}")
 
 def main():
     while True:
@@ -35,15 +76,16 @@ def main():
             case 2:
                 añadirTraduccion(diccionario)
             case 3:
-                pass
+                modificar(diccionario)
             case 4:
-                pass
+                eliminar(diccionario)
             case 5:
-                pass
+                ordenadas(diccionario)
             case 6:
-                pass
+                frase(diccionario)
             case 0:
                 print(f"Saliendo...")
+                break
             case _:
                 print(f"Opción incorrecta o no existe.")
 
