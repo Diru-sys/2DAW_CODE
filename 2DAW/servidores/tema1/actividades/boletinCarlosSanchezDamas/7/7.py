@@ -1,8 +1,8 @@
 def main():
     accesos = 0
     usuarios = {}
-
-    with open("accesos.txt", "r", encoding="utf-8") as fichero:
+    RUTA = "./accesos.txt"
+    with open(RUTA, "r", encoding="utf-8") as fichero:
         for linea in fichero:
             datos = linea.strip().split(";")
 

@@ -1,10 +1,11 @@
 import csv
 import json
 
+RUTA = "./productos.csv"
 
 def cargar_productos():
     productos = []
-    with open("productos.csv", "r", encoding="utf-8") as fichero:
+    with open(RUTA, "r", encoding="utf-8") as fichero:
         lector = csv.DictReader(fichero)
 
         for fila in lector:
@@ -56,7 +57,8 @@ def modificar_stock(productos):
         print(f"Producto no encontrado.")
 
 def guardar_json(productos):
-    with open("productos.json", "w", encoding="utf-8") as fichero:
+    rutaFinal = "./productos.json"
+    with open(rutaFinal, "w", encoding="utf-8") as fichero:
         json.dump(productos, fichero, indent=4, ensure_ascii=False)
 
     print(f"Datos guardados en productos.json")
