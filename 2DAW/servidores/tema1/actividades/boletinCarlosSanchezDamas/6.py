@@ -12,8 +12,8 @@ pedidos = [
         "estado": "enviado"
     }
 ]
-
 estados = ["pendiente", "enviado", "entregado", "cancelado"]
+
 
 def buscar_pedido(pedidos, numero):
     for pedido in pedidos:
