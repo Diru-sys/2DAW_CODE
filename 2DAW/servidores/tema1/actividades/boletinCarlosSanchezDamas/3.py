@@ -105,7 +105,7 @@ def main():
                 print("HASTA PRONTO.")
                 break
             case _:
-
+                print(f"Opción incorrecta o no existe.")
 
 if __name__ == "__main__":
     main()
