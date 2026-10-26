@@ -13,8 +13,7 @@ def añadirJugador(puntuaciones):
     if puntuacion < 0:
         raise ValueError("La puntuación no puede ser menor que 0.")
     puntuaciones[nombre] = puntuacion
-    return f"Jugador y puntuación nueva añadida correctamente."
-
+    print(f"Jugador y puntuación nueva añadida correctamente.")
 
 def modificarPuntuacion(puntuaciones):
     nombreModificar = input("Introduce el nombre de quién quieres cambiar la puntuación: ").strip()
@@ -26,15 +25,14 @@ def modificarPuntuacion(puntuaciones):
         if nombreModificar.lower() == nombre.lower():
             puntuaciones[nombre] = puntuacionNueva
             return f"Puntuación del jugador {nombreModificar} actualizada."
-    return f"Jugador no encontrado correctamente."
-
+    print(f"Jugador no encontrado correctamente.")
 
 def eliminarJugador(puntuaciones):
     nombreJugador = input("Introduce el nombre del jugador que quieras borrar: ").strip()
     for nombre in puntuaciones:
         if nombreJugador.lower() == nombre.lower():
             del puntuaciones[nombreJugador]
-
+    print(f"Jugador eliminado correctamente.")
 
 def consultarJugador(puntuaciones):
     nombreJugador = input("Introduce el nombre del jugador que quieras consultar: ").strip()
@@ -47,6 +45,14 @@ def consultarJugador(puntuaciones):
             return
     print(f"No se encontró al jugador {nombreJugador}")
 
+def mejorJugador(puntuaciones):
+    pass
+
+def mostrarPorPuntuacion(puntuaciones):
+    pass
+
+def mediaPuntuacion(puntuaciones):
+    pass
 
 def main():
     print(f" ==== MENÚ ==== ")
@@ -70,14 +76,14 @@ def main():
             case 4:
                 consultarJugador(puntuaciones)
             case 5:
-                print()
+                mejorJugador(puntuaciones)
             case 6:
-                print()
+                mostrarPorPuntuacion(puntuaciones)
             case 7:
-                print()
+                mediaPuntuacion(puntuaciones)
             case 8:
                 print("HASTA PRONTO.")
-                exit
+                break
 
 
 if __name__ == "__main__":
