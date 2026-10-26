@@ -1,20 +1,44 @@
-#APUNTES EXÁMEN JUEVES 29 DE OCTUBRE
-Intentar demostrar todo lo que sabes, que es
-    1.Usar property
-    2.Usar raise ValueError
-    3.Usar Getters y Setters
-    4.Listas, Diccionarios
-    5.Lambda
-    6.Compression
-    7.Separar por funciones
-    8.JSON, CSV y TXT
-    9.Buen ordenado de carpetas
-    10.Menús
-    11.Bucles, Condicionales
-    12.Decoradores (mas o menos)
-    13.*args y **kwargs
-    14.Modulos
-    15.Imports
-    16.Try,except
-    17."""HELPS"""
-    18. Herencia, polimorfismo y composición
+APUNTES EXAMEN JUEVES 29 DE OCTUBRE
+===================================
+
+OBJETIVO: demostrar todo lo que sabes de Python.
+
+
+1. PROGRAMACION ORIENTADA A OBJETOS
+-----------------------------------
+- Clases con property, getters y setters
+- raise ValueError para validar datos en los setters
+- Herencia, polimorfismo y composicion
+
+
+2. ESTRUCTURAS DE DATOS Y EXPRESIONES COMPACTAS
+-----------------------------------------------
+- Listas y diccionarios
+- Comprehensions (listas/diccionarios por comprension)
+- lambda
+
+
+3. FUNCIONES AVANZADAS
+----------------------
+- *args y **kwargs
+- Decoradores (con que se entiendan mas o menos basta)
+- Separar el codigo en funciones (cada una con una sola tarea)
+
+
+4. CONTROL DE FLUJO
+-------------------
+- Bucles y condicionales
+- Menus (normalmente un while con opciones)
+- try / except para manejar errores
+
+
+5. ARCHIVOS Y ORGANIZACION DEL PROYECTO
+---------------------------------------
+- Ficheros JSON, CSV y TXT (leer y escribir)
+- Modulos e imports
+- Carpetas bien ordenadas
+
+
+6. DOCUMENTACION
+----------------
+- Docstrings ("""ayuda""") en funciones y clases
