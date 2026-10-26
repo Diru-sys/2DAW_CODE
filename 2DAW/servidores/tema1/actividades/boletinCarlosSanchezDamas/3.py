@@ -25,6 +25,8 @@ def modificarPuntuacion(puntuaciones):
         if nombreModificar.lower() == nombre.lower():
             puntuaciones[nombre] = puntuacionNueva
             return f"Puntuación del jugador {nombreModificar} actualizada."
+    return f"Jugador no encontrado correctamente."
+
     print(f"Jugador no encontrado correctamente.")
 
 def eliminarJugador(puntuaciones):
@@ -32,6 +34,7 @@ def eliminarJugador(puntuaciones):
     for nombre in puntuaciones:
         if nombreJugador.lower() == nombre.lower():
             del puntuaciones[nombreJugador]
+
     print(f"Jugador eliminado correctamente.")
 
 def consultarJugador(puntuaciones):
@@ -45,6 +48,34 @@ def consultarJugador(puntuaciones):
             return
     print(f"No se encontró al jugador {nombreJugador}")
 
+def mostrarMejorJugador(puntuaciones):
+    mejor = 0
+    nombreMejor = ""
+
+    for nombre in puntuaciones:
+        if puntuaciones[nombre] > mejor:
+            mejor = puntuaciones[nombre]
+            nombreMejor = nombre
+
+    if nombreMejor:
+        print(f"Mejor jugador: {nombreMejor} - Puntuación: {mejor}")
+    else:
+        print("No hay jugadores registrados.")
+
+def mejoresPuntuaciones(puntuaciones):
+    puntuacionPedida = int(input("Introduce la puntuación: "))
+    for nombre in puntuaciones:
+        if puntuaciones[nombre] == puntuacionPedida:
+            print(f"El jugador {nombre} supera la puntuación pedida.")
+
+def mediaPuntuacion(puntuaciones):
+    sumaPuntos = 0
+    contador = 0
+    for nombre in puntuaciones:
+        contador = contador + 1
+        sumaPuntos = sumaPuntos + puntuaciones[nombre]
+
+    print(f"La media de las puntuaciones es: {sumaPuntos/contador}")
 def mejorJugador(puntuaciones):
     pass
 
@@ -57,6 +88,7 @@ def mediaPuntuacion(puntuaciones):
 def main():
     print(f" ==== MENÚ ==== ")
     while True:
+        print()
         print("1. Añadir jugador")
         print("2. Modificar puntuación")
         print("3. Eliminar jugador")
@@ -76,13 +108,19 @@ def main():
             case 4:
                 consultarJugador(puntuaciones)
             case 5:
+                mostrarMejorJugador(puntuaciones)
                 mejorJugador(puntuaciones)
             case 6:
+                mejoresPuntuaciones(puntuaciones)
                 mostrarPorPuntuacion(puntuaciones)
             case 7:
                 mediaPuntuacion(puntuaciones)
+                mediaPuntuacion(puntuaciones)
             case 8:
                 print("HASTA PRONTO.")
+                break
+            case _:
+                print(f"Opción incorrecta o no existe.")
                 break
 
 

@@ -1,0 +1,26 @@
+[
+    {
+        "codigo": "P001",
+        "nombre": "Teclado",
+        "precio": 25.9,
+        "stock": 67
+    },
+    {
+        "codigo": "P002",
+        "nombre": "Raton",
+        "precio": 12.5,
+        "stock": 15
+    },
+    {
+        "codigo": "P003",
+        "nombre": "Monitor",
+        "precio": 199.9,
+        "stock": 4
+    },
+    {
+        "codigo": "P004",
+        "nombre": "Webcam",
+        "precio": 45.5,
+        "stock": 3
+    }
+]
