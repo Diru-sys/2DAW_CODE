@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.galeria {
+    --gap: 12px;
+    --fondo: #fff;
+
+    max-width: 960px;
+    margin: 0 auto;
+    aspect-ratio: 427 / 265;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1.1fr 1.1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: var(--gap);
+}
+
+.foto {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+
+.foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.05);
+}
+
+.foto figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 24px 12px 10px;
+    color: #fff;
+    font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+    font-weight: 600;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.55), transparent);
+}
+
+.paisaje {
+    grid-area:  /  /  / ;
+}
+
+.ciudad {
+    grid-area:  /  /  / ;
+    z-index: 1;
+}
+
+.flores {
+    grid-area:  /  /  / ;
+}
+
+.bosque {
+    grid-area:  /  /  / ;
+}
+
+.arquitectura {
+    grid-area:  /  /  / ;
+}
+
+.playa {
+    grid-area:  /  /  / ;
+}
+
+.puente {
+    grid-area:  /
