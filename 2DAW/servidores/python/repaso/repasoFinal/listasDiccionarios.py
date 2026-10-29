@@ -16,3 +16,36 @@ alumnos = [
     {"nombre": "Laura", "curso": "2A", "nota": 7}
 ]
 
+for alumno in alumnos:
+    if alumno["nota"] >= 5:
+        print(f"Nombre: {alumno["nombre"]} | Nota: {alumno["nota"]} | Aprobado")
+    else:
+        print(f"Nombre: {alumno["nombre"]} | Nota: {alumno["nota"]} | Suspenso")
+
+print() #-------------------
+
+for alumno in alumnos:
+    if alumno["curso"] == "1A":
+        print(alumno)
+
+print() #-------------------
+
+sumatorioNotas1A = 0
+contadorNotas1A = 0
+sumatorioNotas2A = 0
+contadorNotas2A = 0
+
+for alumno in alumnos:
+    if alumno["curso"] == "1A":
+        contadorNotas1A = contadorNotas1A + 1
+        sumatorioNotas1A = sumatorioNotas1A + alumno["nota"]
+    elif alumno["curso"] == "2A":
+            contadorNotas2A = contadorNotas2A + 1
+            sumatorioNotas2A = sumatorioNotas2A + alumno["nota"]
+print(f"Media del curso 1A: {sumatorioNotas1A / contadorNotas1A:.2f}")
+print(f"Media del curso 2A: {sumatorioNotas2A / contadorNotas2A:.2f}")
+
+print() #-------------------
+
+mejorAlumno = max(alumnos, key=lambda alumno: alumno["nota"])
+print(f"Nombre del mejor alumno: {mejorAlumno["nombre"]} | Curso: {mejorAlumno["curso"]} | Nota: {mejorAlumno["nota"]}")
