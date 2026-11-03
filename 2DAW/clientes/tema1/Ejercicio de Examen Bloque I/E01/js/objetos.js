@@ -33,8 +33,6 @@ class Arbol {
     }
 
     toHTMLRow() {
-        let salida = "<tr>";
-
         /*salida =
         "<tr><td>" +
         this.codigo +
@@ -43,14 +41,8 @@ class Arbol {
         "</td><td>" +
         this.tallaje +
         "</td></tr>";*/
-
-    for (let atrib of Object.values(this)) {
-        salida += "<td>" + atrib + "</td>";
-    }
-    salida += "</tr>";
-
-    return salida;
-    }
+        return `<tr><td>${this.codigo}</td><td>${this.tallaje}</td><td>${this.especie}</td></tr>`;
+}
 }
 
 class Perenne extends Arbol {
@@ -68,22 +60,20 @@ class Perenne extends Arbol {
         this._frutal = value;
     }
 
-    /*toHTMLRow() {
-        let salida;
-        salida = super.toHTMLRow();
-        salida = salida.replace("</tr>", "");
-        salida += "<td>" + this.frutal + "</td></tr>";
-        return salida;
-    }*/
+    toHTMLRow() {
+        return `<tr><td>${this.codigo}</td><td>${this.tallaje}</td><td>${this.especie}</td><td>${this.frutal}</td></tr>`;
+    }
+
+    
 }
 
 class Caduco extends Arbol {
     _mesFloracion;
     
-    constructor(codigo, tallaje, especie, frutal) {
+    constructor(codigo, tallaje, especie, mesFloracion) {
         super(codigo, tallaje, especie);
-        this._mesFloracion = this.mesFloracion;
-    }
+        this._mesFloracion = mesFloracion;
+}
     get mesFloracion() {
         return this._mesFloracion;
     }
@@ -108,12 +98,60 @@ class Vivero {
         this._arboles = value;
     }
 
-    altaArbol(oArbol){
-        if (this.arboles.some()){
-        return false;    
-        } else {
-            this.arboles.push(oArbol);
-            return true;
+    altaArbol(oArbol) {
+        /*
+        function condicion(arbol) {
+            return arbol.codigo == oArbol.codigo;
         }
-    }   
+        existe = this.arboles.some(test);
+        if (!existe) {
+            this.arboles.push(oArbol)
+        }
+        return !existe;
+        */
+        let existe = this.arboles.some((elem) => (elem.codigo === oArbol.codigo));
+        if (!existe) {
+            this.arboles.push(oArbol)
+        }
+        return !existe;
+    }
+
+    tallajeArbol(iCodigo, iTallaje) {
+        let arbol = this.arboles.find((elem) => elem.codigo === iCodigo);
+        let respuesta = "";
+
+        if (arbol === undefined) {
+            respuesta = "Arbol no registrado";
+        } else if (arbol.tallaje > iTallaje) {
+            respuesta = "Tallaje inferior al registrado.";
+        } else {
+            arbol.tallaje = iTallaje;
+            respuesta = "Correcto, tallaje actualizado.";
+            let tipoArbol;
+            arbol instanceof Caduco
+                ? (tipoArbol = "Caduco")
+                : (tipoArbol = "Perenne");
+            respuesta += " " + tipoArbol;
+        }
+        return respuesta;
+    }
+
+    listadoPerennes(iMinAltura) {
+        let tablaPerennes;
+
+        tablaPerennes = this.arboles.filter(
+            (elem) => elem instanceof Perenne && elem.tallaje >= iMinAltura
+        );
+
+        tablaPerennes.sort((a,b) => b.tallaje - a.tallaje);
+
+        let salida = "<table><thead><tr><th>Código</th><th>Tallaje</th><th>Especie</th><th>Frutal</th></tr></thead><tbody>";
+
+        for (let arbol of tablaPerennes) {
+            salida += arbol.toHTMLRow();
+        }
+
+        salida += "</tbody></table>"
+        return salida;
+    }
 }
