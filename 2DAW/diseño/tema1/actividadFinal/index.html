@@ -10,51 +10,187 @@
     <header>
         <img src="./img/logo1.png">
         <p>NOMBRE CINE</p>
-        <nav>
-            <p>Cartelera</p>
-            <p>Próximamente</p>
-            <p>Promociones</p>
-            <p>¿Dónde estamos?</p>
-            <p>contacto</p>
+        <nav class="navBar">
+            <ul class="listaNav">
+                <li><a href="#">Carletera</a></li>
+                <li><a href="#">Próximamente</a></li>
+                <li><a href="#">Promociones</a></li>
+                <li><a href="#">¿Dónde estamos?</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
         </nav>
+        <button class="comprarEntradas">Comprar entradas</button>
     </header>
+
+    <hr>
+
     <main>
         <section class="hero">
-            <div>
-
+            <div class="cartelTitular">
+                <img src="./img/1.jpg">
+                <div class="estreno">
+                    <p>ESTRENO</p>
+                </div>
+                <h1>TITULO PELÍCULA DESTACADA</h1>
+                <p>Genero - Duración - Clasificación</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Neque, fugit reprehenderit excepturi hic ex ratione.
+                    Aperiam quam dolores impedit eaque aliquam cumque voluptatem asperiores,
+                    adipisci est, numquam at odio pariatur.
+                </p>
             </div>
-            <div>
-
-            </div>
+            <button class="comprarEntradas">Comprar entradas</button>
+            <button class="trailerTitular">Ver tráiler</button>
         </section>
+
+        <hr>
+
         <section class="cartelera">
+            <h1>CARLETERA</h1>
+            <button class="hoy">Hoy</button>
+            <button class="mañana">Mañana</button>
+            <button class="jueves">Jue 5</button>
+            <button class="viernes">Vie 6</button>
             <div>
                 <article class="1">
-
+                    <img src="./img/noTitular1.jpeg">
+                    <h2>Título película 1</h2>
+                    <button class="horario">Ver horarios</button>
                 </article>
                 <article class="2">
-                    
+                    <img src="./img/noTitular2.jpg">
+                    <h3>Título película 2</h3>
                 </article>
                 <article class="3">
-                    
+                    <img src="./img/noTitular3.jpg">
+                    <h3>Título película 3</h3>
                 </article>
                 <article class="4">
-                    
+                    <img src="./img/noTitular4.jpg">
+                    <h3>Título película 4</h3>
                 </article>
                 <article class="5">
-                    
+                    <img src="./img/noTitular5.jpeg">
+                    <h3>Título película 5</h3>
                 </article>
             </div>
         </section>
+        
+        <hr>
+
         <section class="donde">
-
+            <h1><a href="https://maps.app.goo.gl/mXSKPbJVzz7QDr8CA">¿Dónde estamos?</a></h1>
+            <ul class="datos">
+                <li>Calle Ejemplo, 00</li>
+                <li>000000 Ciudad</li>
+                <li>Tel. 000 000 000</li>
+                <ul class="subDatos">
+                    <li><a href="#">Horario Taquilla</a></li>
+                    <li><a href="#">Parking</a></li>
+                    <li><a href="#">Transporte</a></li>
+                </ul>
+            </ul>
+            <iframe 
+                src="https://maps.app.goo.gl/mXSKPbJVzz7QDr8CA"
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </section>
-        <section class="contacto">
-            <form id="frmDatos" name="frmDatos" class="frmDatos">
 
+        <hr>
+
+        <section class="contacto">
+            <form id="frmDatos" class="frmDatos" action="#" method="post">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name">
+
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="fami<form id="frmDatos" class="frmDatos" action="#" method="post">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name">
+
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="family-name">
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+
+                <label for="tlf">Teléfono</label>
+                <input type="tel" id="tlf" name="tlf" pattern="[6-9][0-9]{8}" autocomplete="tel">
+
+                <label for="motivo">Motivo *</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="">Selecciona un motivo...</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="grupos">Grupos</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fecha">Fecha de la visita</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="nPersonas">Nº de personas</label>
+                <input type="number" id="nPersonas" name="nPersonas" min="1" max="20">
+
+                <label for="cPostal">Código postal</label>
+                <input type="text" id="cPostal" name="cPostal" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+                
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" required minlength="20" maxlength="500" placeholder="Cuéntanos (min. 20 caracteres)"></textarea>
+                
+                <input type="checkbox" id="politica" name="politica" required>
+                <label for="politica">Política de privacidad *</label>
+                
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Quiero recibir la cartelera semanal por email</label>
+                
+                <button class="enviar" type="submit">Enviar</button>
+            </form>ly-name">
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+
+                <label for="tlf">Teléfono</label>
+                <input type="tel" id="tlf" name="tlf" pattern="[6-9][0-9]{8}" autocomplete="tel">
+
+                <label for="motivo">Motivo *</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="">Selecciona un motivo...</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="grupos">Grupos</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fecha">Fecha de la visita</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="nPersonas">Nº de personas</label>
+                <input type="number" id="nPersonas" name="nPersonas" min="1" max="20">
+
+                <label for="cPostal">Código postal</label>
+                <input type="text" id="cPostal" name="cPostal" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+                
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" required minlength="20" maxlength="500" placeholder="Cuéntanos (min. 20 caracteres)"></textarea>
+                
+                <input type="checkbox" id="politica" name="politica" required>
+                <label for="politica">Política de privacidad *</label>
+                
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Quiero recibir la cartelera semanal por email</label>
+                
+                <button class="enviar" type="submit">Enviar</button>
             </form>
         </section>
     </main>
+    
+    <br>
+
     <footer>
         <div class="pie">
 
