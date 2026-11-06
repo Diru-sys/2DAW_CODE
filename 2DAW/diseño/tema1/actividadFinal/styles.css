@@ -1,0 +1,39 @@
+* {
+    background-color: var(--fondo1);
+    color: var(--blanco);
+    margin: 0;
+    padding: 0;
+}
+
+@font-face { /* Font para los titulares */
+    font-family: 'Bebas Neue';
+    src: url('./fonts/bebas-neue-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face { /* Font para los textos regulares */
+    font-family: 'Inter';
+    src: url('./fonts/inter-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --fondo1: #0E0F13;
+    --supTarjetas: #1A1C23;
+    --bordes: #2C2F3A;
+    --txtPrincipal: #F2EFE8;
+    --txtSecundario: #A7A9B2;
+    --ambar: #F2B33D;
+    --rojo: #C8102E;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+footer nav {
+    flex: auto;
+}
+
