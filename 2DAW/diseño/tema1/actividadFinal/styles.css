@@ -31,6 +31,8 @@
     --rojo: #C8102E;
     --blanco: #ffffff;
     --negro: #000000;
+    --fontTitular: 'Bebas Neue', sans-serif;
+    --fontBody: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe Ui', Roboto, sans-serif;
 }
 
 footer nav {
