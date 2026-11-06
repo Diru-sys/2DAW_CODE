@@ -107,21 +107,16 @@
         <section class="contacto">
             <form id="frmDatos" class="frmDatos" action="#" method="post">
                 <label for="nombre">Nombre *</label>
-                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name">
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name" placeholder="Tu nombre">
 
                 <label for="apellidos">Apellidos *</label>
-                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="fami<form id="frmDatos" class="frmDatos" action="#" method="post">
-                <label for="nombre">Nombre *</label>
-                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name">
-
-                <label for="apellidos">Apellidos *</label>
-                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="family-name">
+                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="family-name" placeholder="Tus apellidos">
 
                 <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required autocomplete="email">
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="nombre@correo.es">
 
                 <label for="tlf">Teléfono</label>
-                <input type="tel" id="tlf" name="tlf" pattern="[6-9][0-9]{8}" autocomplete="tel">
+                <input type="tel" id="tlf" name="tlf" pattern="[6-9][0-9]{8}" autocomplete="tel" placeholder="600 000 000">
 
                 <label for="motivo">Motivo *</label>
                 <select id="motivo" name="motivo" required>
@@ -138,42 +133,7 @@
                 <input type="number" id="nPersonas" name="nPersonas" min="1" max="20">
 
                 <label for="cPostal">Código postal</label>
-                <input type="text" id="cPostal" name="cPostal" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
-                
-                <label for="mensaje">Mensaje *</label>
-                <textarea id="mensaje" name="mensaje" required minlength="20" maxlength="500" placeholder="Cuéntanos (min. 20 caracteres)"></textarea>
-                
-                <input type="checkbox" id="politica" name="politica" required>
-                <label for="politica">Política de privacidad *</label>
-                
-                <input type="checkbox" id="newsletter" name="newsletter">
-                <label for="newsletter">Quiero recibir la cartelera semanal por email</label>
-                
-                <button class="enviar" type="submit">Enviar</button>
-            </form>ly-name">
-
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required autocomplete="email">
-
-                <label for="tlf">Teléfono</label>
-                <input type="tel" id="tlf" name="tlf" pattern="[6-9][0-9]{8}" autocomplete="tel">
-
-                <label for="motivo">Motivo *</label>
-                <select id="motivo" name="motivo" required>
-                    <option value="">Selecciona un motivo...</option>
-                    <option value="consulta">Consulta general</option>
-                    <option value="grupos">Grupos</option>
-                    <option value="otro">Otro</option>
-                </select>
-
-                <label for="fecha">Fecha de la visita</label>
-                <input type="date" id="fecha" name="fecha">
-
-                <label for="nPersonas">Nº de personas</label>
-                <input type="number" id="nPersonas" name="nPersonas" min="1" max="20">
-
-                <label for="cPostal">Código postal</label>
-                <input type="text" id="cPostal" name="cPostal" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+                <input type="text" id="cPostal" name="cPostal" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code" placeholder="41001">
                 
                 <label for="mensaje">Mensaje *</label>
                 <textarea id="mensaje" name="mensaje" required minlength="20" maxlength="500" placeholder="Cuéntanos (min. 20 caracteres)"></textarea>
