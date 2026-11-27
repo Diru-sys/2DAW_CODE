@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Linkear el Bootstrap CSS -->
+</head>
+<body>
+    <!-- primary => Azul de Bootstrap -->
+    <!-- secondary => Gris apagado -->
+    <!-- light => lo que sea claro -->
+    <!-- sm => suave a la sombra -->
+    <!-- btn => estilo base para definir botones -->
+    <!-- success => Verde de Bootstrap -->
+    <!-- info => texto azul informativo de Bootstrap -->
+
+
+    <div class="container mt-4 p-4 bg-light rounded shadow-sm">
+    <!-- bg-light => da un fondo a la caja de un gris claro -->
+    <!-- mt-4 => 4 niveles desde arriba(marginTop) -->
+    <!-- p-4 => relleno por dentro de la caja (4) -->
+    <!-- rounded => bordes redondeados a la caja -->
+    <!-- shadow-sm => sombra suave a la caja -->
+
+        <h1 class="text-primary">
+            Titulo de la página
+            <span class="badge text-bg-success">Nuevo</span>
+            <!-- badge => indica que es una etiqueta/insignia -->
+            <!-- text-bg-success => texto + background + color Verde de Bootstrap -->
+        </h1>
+        <!-- text-primary => cambia al color azul de Bootstrap -->
+
+        <p class="text-secondary mb-3"> Hola Mundo, esta es mi primera práctica con Bootstrap.</p>
+        <!-- text-secondary => cambia el color a gris apagado -->
+        <!-- mb-3 => 3 niveles desde abajo(marginBottom) -->
+
+        <div class="alert alert-info">Aviso: tienes envío gratis en este pedido.</div>
+        <!-- alert => caja de aviso -->
+        <!-- alert-info => estilo azul claro informativo -->
+
+        <button class="btn btn-primary">Pulsa aquí</button>
+        <!-- btn => indica que es un botón -->
+        <!-- btn-primary => le  da el color azul de Bootstrap (ademas de otros efectos como el hover) -->
+
+        <button class="btn btn-outline-secondary ms-2">Cancelar compra</button>
+        <!-- btn => indica que es un botón -->
+        <!-- outline-secondary => indica que sea solo con borde, y se lo da de color gris apagado (ademas de otros efectos como el hover) -->
+        <!-- ms-2 => margin-start 2 (margen al inicio es decir la izquierda de nivel 2)-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
